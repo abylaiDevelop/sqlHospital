@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class PatientResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toArray($request)
+    {
+        return [
+          "name" => $this->name,
+          "email" => $this->email,
+          "address" => $this->address,
+          "phoneNumber" => $this->phoneNumber,
+          "blood" => $this->blood,
+          "sex" => $this->sex,
+          "age" => $this->age,
+          "patientsStatements" => $this->patientsStatements,
+          "patient_id" => $this->patient_id,
+          "doctor" => $this->doctor,
+        ];
+    }
+}
